@@ -24,5 +24,10 @@ You can run the container and mount a local directory for your notebooks using t
     ```
     podman run -p 8888:8888 -v <local-notebooks-dir>:/workspace/notebooks quay.io/hammadrauf/jupyter-notebook
     ```
-- Then open http://localhost:8888 in your browser.
-No token is required to access the Jupyter Notebook.
+- Then open http://localhost:8888 in your browser. No token is required to access the Jupyter Notebook.
+
+## How to Use it with Copilot
+- Video Link 1 [https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks](https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks)
+- Video Link 2 [https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks](https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks)
+- To Do:
+
