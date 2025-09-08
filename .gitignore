@@ -1,0 +1,59 @@
+# Ignore all .log files
+*.log
+
+# Ignore a specific directory
+/build/
+
+# Do not ignore this particular file, even if its folder is ignored
+!important.txt
+
+../AAA-Mobile-Apps/
+../Android-KeyStore/
+../AngularJS Restful web service example using $http - Java tutorial for beginners.pdf
+../AngularjsJAXRSCRUDExample-master.zip
+../Bonobo-My-Fork/
+../Bonobo_Source_MyWorkingVersion_github/
+../Bootloader/
+../C-Cpp-Sources-Ubuntu-Raspi/
+../Compiler/
+../DNN-Source01/
+../DataStructures_Book_Kruse/
+../DosBox - Links.txt
+../DreamWeaver-Templates/
+../Electron-Kicad/
+../ElectronicsProjects/
+../Inspiration-tg/
+../KTorrentImport/
+../KivyGameTutorial/
+../Mobile-Apps/
+../ModuleHelloWorld/
+../NetBeans-Projects/
+../OldWorks/
+../School-Practice-Revisited/
+../Utils/
+../Web.config
+../activemq-artemis-rest/
+../activemq-artemis/
+../agent-vinfra/
+../calfaq/
+../devops/
+../editMySite.ant/
+../editMySite.maven.zip
+../editMySite.maven/
+../electronics/
+../extra-cmake-modules/
+../git-source/
+../hexword.ca.UIControls/
+./
+../ktorrent/
+../lanterna-3.0.0-alpha4.jar
+../main.cf
+../main.zip
+../miniupnp/
+../nopCommerce/
+../pivpn/
+../repos/
+../vcpkg-source/
+../vcpkg-wsl/
+../zevBrowser/
+../zmBrowse/
