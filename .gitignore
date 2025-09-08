@@ -3,6 +3,7 @@
 
 # Ignore a specific directory
 /build/
+/notebook*/
 
 # Do not ignore this particular file, even if its folder is ignored
 !important.txt

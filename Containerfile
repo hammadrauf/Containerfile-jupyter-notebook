@@ -30,4 +30,4 @@ VOLUME ["/workspace/notebooks"]
 EXPOSE 8888
 
 # Start Jupyter Notebook, set notebook dir to the volume
-CMD ["jupyter", "notebook", "--notebook-dir=/workspace/notebooks", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token
+CMD ["jupyter", "notebook", "--notebook-dir=/workspace/notebooks", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
