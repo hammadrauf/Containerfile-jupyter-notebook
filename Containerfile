@@ -54,4 +54,6 @@ EXPOSE 8888
 
 # Start Jupyter Notebook, set notebook dir to the volume
 #CMD ["jupyter", "notebook", "--notebook-dir=/workspace/notebooks", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
-CMD ["sh", "-c", "jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token='${JUPYTER_TOKEN}'"]
+#CMD ["sh", "-c", "jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token='${JUPYTER_TOKEN}'"]
+#CMD ["sh", "-c", "jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root --ServerApp.token='${JUPYTER_TOKEN}'"]
+CMD ["sh", "-c", "jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root --IdentityProvider.token='${JUPYTER_TOKEN}'"]

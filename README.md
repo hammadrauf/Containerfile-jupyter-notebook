@@ -1,4 +1,11 @@
 # Containerfile-jupyter-notebook
+A Container image with Jupyter-Notebook. It is specially customized for Python, Pandas, seaborn, GNU-Octave, Latex and PDF. It uses mini-conda for managing Python libraries.
+  
+Use it in a local Host-OS Volume for Notebooks. It can be used from VSCode with following:Extensions:
+- Github Copilot (From Github)
+- Github Copilot Chat (From Github)
+- Container Tools (From Microsoft)
+- Jupyter (From Microsoft)
 
 ## On Quay.io
 - [https://quay.io/repository/hammadrauf/jupyter-notebook](https://quay.io/repository/hammadrauf/jupyter-notebook)
@@ -48,6 +55,6 @@ To require a token for access, set the `JUPYTER_TOKEN` environment variable:
 Then open [http://localhost:8888](http://localhost:8888) in your browser and enter the token if prompted.
 
 ## How to Use it with Copilot
-- Video Link 1 [https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks](https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks)
-- Video Link 2 [https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks](https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks)
+Although this video uses a different container (and VSCode extensions) for Jupyter, but the concepts, and usage idea is similar.
+- Video Link [https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks](https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks)
 
