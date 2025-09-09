@@ -67,5 +67,5 @@ EXPOSE 8888
 #CMD ["sh", "-c", "jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token='${JUPYTER_TOKEN}'"]
 #CMD ["sh", "-c", "jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root --ServerApp.token='${JUPYTER_TOKEN}'"]
 #CMD ["sh", "-c", "jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root"]
-CMD Xvfb :1 -screen 0 1024x768x256 & \
+CMD Xvfb :1 -screen 0 1024x768x24 & \
     jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root
