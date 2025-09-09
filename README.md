@@ -1,5 +1,5 @@
 # Containerfile-jupyter-notebook
-A Container image with Jupyter-Notebook. It is specially customized for Python, Pandas, seaborn, GNU-Octave, Latex and PDF. It uses mini-conda for managing Python libraries.
+A Container image with Jupyter-Notebook. It is specially customized for Python, Pandas, Seaborn, GNU-Octave, Latex and PDF. It uses mini-conda for managing Python libraries.
   
 Use it in a local Host-OS Volume for Notebooks. It can be used from VSCode with following:Extensions:
 - Github Copilot (From Github)
@@ -34,7 +34,7 @@ You can run the container and mount a local directory for your notebooks using t
     podman run -p 8888:8888 -v <local-notebooks-dir>:/workspace/notebooks quay.io/hammadrauf/jupyter-notebook
     ```
 
-Then open [http://localhost:8888](http://localhost:8888) in your browser
+Then open [http://localhost:8888](http://localhost:8888) in your browser, or start a *.ipynb jupyter notebook in VSCode.
   
 By default, no token is required to access the Jupyter Notebook.
 
@@ -52,7 +52,7 @@ To require a token for access, set the `JUPYTER_TOKEN` environment variable:
     podman run -p 8888:8888 -v <local-notebooks-dir>:/workspace/notebooks -e JUPYTER_TOKEN=yourtoken quay.io/hammadrauf/jupyter-notebook
     ```
 
-Then open [http://localhost:8888](http://localhost:8888) in your browser and enter the token if prompted.
+Then open [http://localhost:8888](http://localhost:8888) in your browser and enter the token if prompted. Or start a *.ipynb jupyter notebook in VSCode.
 
 ## How to Use it with Copilot
 Although this video uses a different container (and VSCode extensions) for Jupyter, but the concepts, and usage idea is similar.
