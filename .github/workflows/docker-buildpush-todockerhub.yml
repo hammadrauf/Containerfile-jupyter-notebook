@@ -26,3 +26,4 @@ jobs:
         with:
           push: true
           tags: hammadrauf/jupyter-notebook:latest
+          file: ./Containerfile
