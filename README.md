@@ -12,8 +12,9 @@ This Container Image can be used from VSCode with following Extensions:
 
 ## Suggestions on How to Use it with Copilot
 Although this video uses a different container (and VSCode extensions) for Jupyter, but the concepts, and usage idea is similar. You can use the CoPilot interface in VSCode Extensions to help you in generation of Jupyter Notebooks.
+- **<u>Attention</u>**: The Video below uses a different Container service, that may be paid, and non-free. This video is linked here only for suggesting how this free Container may also be used.
 - Video Link [https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks](https://learn.microsoft.com/en-us/shows/github-copilot-series/using-copilot-with-jupyter-notebooks)
-- Same video on Youtube [https://www.youtube.com/watch?v=QS_bh-3qKdw](https://www.youtube.com/watch?v=QS_bh-3qKdw)
+    - [![Video suggesting how to use Copilot in VSCode for Jupyter](https://img.youtube.com/vi/QS_bh-3qKdw/0.jpg)](https://www.youtube.com/watch?v=QS_bh-3qKdw)
 
 
 ## Download from Quay.io
