@@ -71,7 +71,7 @@ Jupyter Server/Notebook Supports Token for security. A Token is a HexaDecimal nu
 Then open [http://localhost:8888](http://localhost:8888) in your browser and enter the token if prompted. Or start a *.ipynb jupyter notebook in VSCode.
 
 ## Sample Jupyter Notebooks
-There are 4 sample Jupyter Notebooks (*.ipynb) files included. Place them in your Folder that you are mapping to Container volume /workspace/notebooks.
+There are 5 sample Jupyter Notebooks (*.ipynb) files included. Place them in your Folder that you are mapping to Container volume /workspace/notebooks.
 1. [sample-notebooks/Titanic.ipynb](./sample-notebooks/Titanic.ipynb) - Use Python Kernel for this.
 1. [sample-notebooks/RunShell.ipynb](./sample-notebooks/RunShell.ipynb) - Use Python Kernel for this.
 1. [sample-notebooks/Matrices_&_Determinants.ipynb](./sample-notebooks/Matrices_&_Determinants.ipynb) - Use Octave Kernel for this.
