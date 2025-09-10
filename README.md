@@ -75,5 +75,10 @@ There are 4 sample Jupyter Notebooks (*.ipynb) files included. Place them in you
 1. [sample-notebooks/Titanic.ipynb](./sample-notebooks/Titanic.ipynb) - Use Python Kernel for this.
 1. [sample-notebooks/RunShell.ipynb](./sample-notebooks/RunShell.ipynb) - Use Python Kernel for this.
 1. [sample-notebooks/Matrices_&_Determinants.ipynb](./sample-notebooks/Matrices_&_Determinants.ipynb) - Use Octave Kernel for this.
-1. [sample-notebooks/Solving-Linear-Equations.ipynb](./sample-notebooks/Solving-Linear-Equations.ipynb) - Use Octave Kernel for this.
+1. [sample-notebooks/Solving-Linear-Equations - with visible latex.ipynb](./sample-notebooks/Solving-Linear-Equations - with visible latex.ipynb) - Use Octave Kernel for this.
+1. [sample-notebooks/Solving-Linear-Equations - with hidden latex.ipynb](./sample-notebooks/Solving-Linear-Equations - with hidden latex.ipynb) - Use Octave Kernel for this.
 
+## Using Latex
+When using Latex in your notebooks, that may eventually be convertedto PDF files, make sure to use strict Latex syntax. The Latex to PDF converter used in this Container (nbconvert with xelatex) is particularly sensitive to extra 'Space' characters.
+  
+If you encounter error when converting a notebook to PDF make sure the Latex expressions you may have used in that notebook do not use unnecessary Spaces.
