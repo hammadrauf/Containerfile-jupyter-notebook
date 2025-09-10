@@ -79,6 +79,6 @@ There are 4 sample Jupyter Notebooks (*.ipynb) files included. Place them in you
 1. [sample-notebooks/Solving-Linear-Equations - with hidden latex.ipynb](./sample-notebooks/Solving-Linear-Equations%20-%20with%20hidden%20latex.ipynb) - Use Octave Kernel for this.
 
 ## Using Latex
-When using Latex in your notebooks, that may eventually be convertedto PDF files, make sure to use strict Latex syntax. The Latex to PDF converter used in this Container (nbconvert with xelatex) is particularly sensitive to extra 'Space' characters.
+When using Latex in your notebooks, that may eventually be converted to PDF files, make sure to use strict Latex syntax. The Latex to PDF converter used in this Container (nbconvert with xelatex) is particularly sensitive to extra 'Space' characters.
   
 If you encounter error when converting a notebook to PDF make sure the Latex expressions you may have used in that notebook do not use unnecessary Spaces.
