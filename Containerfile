@@ -16,6 +16,7 @@ RUN apt-get update && \
 ENV OCTAVE_EXECUTABLE=/usr/bin/octave
 ENV DISPLAY=:1
 ENV JUPYTER_TOKEN=
+ENV JUPYTER_BASE_URL=/
 
 # Install Miniconda
 ENV CONDA_DIR=/opt/conda
@@ -46,7 +47,9 @@ RUN mkdir -p /root/.jupyter/nbconvert/templates/latex && \
     echo "c.NbConvertApp.export_format = 'latex'" > /root/.jupyter/jupyter_nbconvert_config.py && \
     echo "c.NbConvertApp.template_file = 'basic'" >> /root/.jupyter/jupyter_nbconvert_config.py && \
     echo "import os" > /root/.jupyter/jupyter_server_config.py && \
-    echo "c.IdentityProvider.token = os.environ.get('JUPYTER_TOKEN', '')" >> /root/.jupyter/jupyter_server_config.py
+    echo "c.IdentityProvider.token = os.environ.get('JUPYTER_TOKEN', '')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.NotebookApp.base_url = os.environ.get('JUPYTER_BASE_URL', '/')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.ServerApp.base_url = os.environ.get('JUPYTER_BASE_URL', '/')" >> /root/.jupyter/jupyter_server_config.py
     # echo "{% extends 'base.html' %}" > /root/.jupyter/nbconvert/templates/latex/base.tplx && \
     # echo "{% block body %}" >> /root/.jupyter/nbconvert/templates/latex/base.tplx
 
