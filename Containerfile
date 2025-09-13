@@ -17,6 +17,8 @@ ENV OCTAVE_EXECUTABLE=/usr/bin/octave
 ENV DISPLAY=:1
 ENV JUPYTER_TOKEN=
 ENV JUPYTER_BASE_URL=/
+ENV JUPYTER_ALLOW_ORIGIN='*'
+ENV JUPYTER_LISTEN_IP='0.0.0.0'
 
 # Install Miniconda
 ENV CONDA_DIR=/opt/conda
@@ -49,7 +51,9 @@ RUN mkdir -p /root/.jupyter/nbconvert/templates/latex && \
     echo "import os" > /root/.jupyter/jupyter_server_config.py && \
     echo "c.IdentityProvider.token = os.environ.get('JUPYTER_TOKEN', '')" >> /root/.jupyter/jupyter_server_config.py && \
     echo "c.NotebookApp.base_url = os.environ.get('JUPYTER_BASE_URL', '/')" >> /root/.jupyter/jupyter_server_config.py && \
-    echo "c.ServerApp.base_url = os.environ.get('JUPYTER_BASE_URL', '/')" >> /root/.jupyter/jupyter_server_config.py
+    echo "c.ServerApp.base_url = os.environ.get('JUPYTER_BASE_URL', '/')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.ServerApp.allow_origin = os.environ.get('JUPYTER_ALLOW_ORIGIN', '*')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.ServerApp.ip = os.environ.get('JUPYTER_LISTEN_IP', '0.0.0.0')" >> /root/.jupyter/jupyter_server_config.py
     # echo "{% extends 'base.html' %}" > /root/.jupyter/nbconvert/templates/latex/base.tplx && \
     # echo "{% block body %}" >> /root/.jupyter/nbconvert/templates/latex/base.tplx
 

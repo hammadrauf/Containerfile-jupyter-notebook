@@ -50,7 +50,7 @@ You can run the container and mount a local directory for your notebooks using t
     podman run -p 8888:8888 -v <local-notebooks-dir>:/workspace/notebooks quay.io/hammadrauf/jupyter-notebook
     ```
     ```
-    podman run --name jupyter01 -d -p 8888:8888 -v C://Users//XXX/Source//jupyter-notebooks:/workspace/notebooks quay.io/hammadrauf/jupyter-notebook
+    podman run --name jupyter01 -d -p 8888:8888 -v C://Users//XXX//Source//jupyter-notebooks:/workspace/notebooks -e JUPYTER_BASE_URL=/jupyter quay.io/hammadrauf/jupyter-notebook
     ```
 
 Then open [http://localhost:8888](http://localhost:8888) in your browser, or start a *.ipynb jupyter notebook in VSCode.
@@ -71,7 +71,7 @@ Jupyter Server/Notebook Supports Token for security. A Token is a HexaDecimal nu
     podman run -p 8888:8888 -v <local-notebooks-dir>:/workspace/notebooks -e JUPYTER_TOKEN=yourtoken quay.io/hammadrauf/jupyter-notebook
     ```
     ```
-    podman run --name jupyter01 -d -p 8888:8888 -v C://Users//XXX/Source//jupyter-notebooks:/workspace/notebooks -e JUPYTER_TOKEN=yourtoken quay.io/hammadrauf/jupyter-notebook
+    podman run --name jupyter01 -d -p 8888:8888 -v C://Users//XXX//Source//jupyter-notebooks:/workspace/notebooks -e JUPYTER_TOKEN=yourtoken -e JUPYTER_BASE_URL=/jupyter quay.io/hammadrauf/jupyter-notebook
     ```
 
 Then open [http://localhost:8888](http://localhost:8888) in your browser and enter the token if prompted. Or start a *.ipynb jupyter notebook in VSCode.
