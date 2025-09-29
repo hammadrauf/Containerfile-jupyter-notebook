@@ -20,6 +20,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - 
+        name: Docker system prune
+        run: docker system prune -af          
       -
         name: Build and push
         uses: docker/build-push-action@v6
@@ -27,3 +30,5 @@ jobs:
           push: true
           tags: hammadrauf/jupyter-notebook:latest
           file: ./Containerfile
+          no-cache: true
+          rm: true          
