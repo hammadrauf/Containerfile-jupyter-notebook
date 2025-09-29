@@ -1,16 +1,17 @@
 FROM archlinux:latest
 
 # Disable pacman timeout on slow repo mirrors.
-RUN pacman -Syu --disable-download-timeout --noconfirm
+# RUN pacman -Syu --disable-download-timeout --noconfirm
 # Update package database and install dependencies
-RUN pacman -Sy --noconfirm \
-    xfce4 xfce4-goodies xorg-server xorg-xhost xorg-server-xvfb \
-    wget \
-    octave \
-    qt5-base qt5-svg qt5-tools \
-    inkscape poppler pandoc texlive-basic texlive-bin texlive-fontsextra texlive-fontsrecommended texlive-latexextra texlive-xetex texlive-mathscience texlive-metapost texlive-plaingeneric \
-    python-pip
+RUN pacman -Sy --noconfirm --disable-download-timeout \
+    xorg-server-xvfb wget octave \
+    qt5-base qt5-svg \
+    inkscape pandoc texlive-basic \
+    texlive-bin texlive-fontsrecommended \
+    texlive-latexextra texlive-xetex texlive-plaingeneric
 
+RUN pacman -Scc --noconfirm    
+    
 # Set environment variables
 ENV OCTAVE_EXECUTABLE=/usr/bin/octave
 ENV DISPLAY=:1
@@ -26,6 +27,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
     bash /tmp/miniconda.sh -b -p $CONDA_DIR && \
     rm /tmp/miniconda.sh
 ENV PATH=$CONDA_DIR/bin:$PATH
+RUN $CONDA_DIR/bin/pip install --upgrade pip
 
 # Accept Anaconda Terms of Service for required channels
 RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
@@ -37,7 +39,7 @@ RUN conda install --yes python=3.11 jupyter ipykernel pandas seaborn nbconvert t
 RUN conda config --add channels conda-forge && \
     conda tos accept && \
     conda config --set channel_priority strict && \    
-    conda install --yes octave_kernel texinfo sage && \
+    conda install --yes octave_kernel texinfo sage future>=0.18.3 && \
     conda clean --all -f -y    
 
 # Configure Jupyter and octave-kernel
