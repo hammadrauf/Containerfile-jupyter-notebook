@@ -9,11 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Remove unnecessary files
-        run: |
-          rm -rf ~/.cache
-          rm -rf /tmp/*      
-      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       -
