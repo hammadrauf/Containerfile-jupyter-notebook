@@ -1,0 +1,61 @@
+FROM archlinux:latest
+
+# Disable pacman timeout on slow repo mirrors.
+RUN pacman -Syu --disable-download-timeout --noconfirm
+# Update package database and install dependencies
+RUN pacman -Sy --noconfirm \
+    xfce4 xfce4-goodies xorg-server xorg-xhost xorg-server-xvfb \
+    wget \
+    octave \
+    qt5-base qt5-svg qt5-tools \
+    inkscape poppler pandoc texlive-basic texlive-lang texlive-bin texlive-fontsextra texlive-fontsrecommended texlive-latexextra texlive-xetex texlive-mathscience texlive-metapost texlive-plaingeneric \
+    python-pip
+
+# Set environment variables
+ENV OCTAVE_EXECUTABLE=/usr/bin/octave
+ENV DISPLAY=:1
+ENV JUPYTER_TOKEN=
+ENV JUPYTER_BASE_URL=/
+ENV JUPYTER_ALLOW_ORIGIN='\d+\.\d+\.\d+\.\d+|localhost|127\.0\.0\.1'
+ENV JUPYTER_LISTEN_IP='0.0.0.0'
+ENV JUPYTER_ALLOW_REMOTE_ACCESS=1
+
+# Install Miniconda
+ENV CONDA_DIR=/opt/conda
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
+    bash /tmp/miniconda.sh -b -p $CONDA_DIR && \
+    rm /tmp/miniconda.sh
+ENV PATH=$CONDA_DIR/bin:$PATH
+
+# Accept Anaconda Terms of Service for required channels
+RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+
+# Create a conda environment and install packages
+RUN conda install --yes python=3.11 jupyter ipykernel pandas seaborn nbconvert texlive-core pandoc pyqt
+# Install octave-kernel, texinfo, sagemath from conda-forge
+RUN conda config --add channels conda-forge && \
+    conda tos accept && \
+    conda config --set channel_priority strict && \    
+    conda install --yes octave_kernel texinfo sage && \
+    conda clean --all -f -y    
+
+# Configure Jupyter and octave-kernel
+RUN mkdir -p /root/.jupyter/nbconvert/templates/latex && \
+    echo "c.OctaveKernel.plot_settings = dict(backend='qt')" > /root/.jupyter/octave_kernel_config.py && \
+    echo "c.NbConvertApp.export_format = 'latex'" > /root/.jupyter/jupyter_nbconvert_config.py && \
+    echo "c.NbConvertApp.template_file = 'basic'" >> /root/.jupyter/jupyter_nbconvert_config.py && \
+    echo "import os" > /root/.jupyter/jupyter_server_config.py && \
+    echo "c.IdentityProvider.token = os.environ.get('JUPYTER_TOKEN', '')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.NotebookApp.base_url = os.environ.get('JUPYTER_BASE_URL', '/')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.ServerApp.base_url = os.environ.get('JUPYTER_BASE_URL', '/')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.ServerApp.allow_origin = os.environ.get('JUPYTER_ALLOW_ORIGIN', '\d+\.\d+\.\d+\.\d+|localhost|127\.0\.0\.1')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.ServerApp.ip = os.environ.get('JUPYTER_LISTEN_IP', '0.0.0.0')" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "c.ServerApp.allow_remote_access = bool(int(os.environ.get('JUPYTER_ALLOW_REMOTE_ACCESS', '1')))" >> /root/.jupyter/jupyter_server_config.py
+
+WORKDIR /workspace
+VOLUME ["/workspace/notebooks"]
+EXPOSE 8888
+
+CMD Xvfb :1 -screen 0 1024x768x24 & \
+    jupyter notebook --notebook-dir=/workspace/notebooks --ip=0.0.0.0 --no-browser --allow-root
