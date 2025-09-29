@@ -8,7 +8,7 @@ RUN pacman -Sy --noconfirm \
     wget \
     octave \
     qt5-base qt5-svg qt5-tools \
-    inkscape poppler pandoc texlive-basic texlive-lang texlive-bin texlive-fontsextra texlive-fontsrecommended texlive-latexextra texlive-xetex texlive-mathscience texlive-metapost texlive-plaingeneric \
+    inkscape poppler pandoc texlive-basic texlive-bin texlive-fontsextra texlive-fontsrecommended texlive-latexextra texlive-xetex texlive-mathscience texlive-metapost texlive-plaingeneric \
     python-pip
 
 # Set environment variables
