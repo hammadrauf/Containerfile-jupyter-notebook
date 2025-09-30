@@ -1,4 +1,4 @@
-# Containerfile-jupyter-notebook
+# Jupyter-notebook
 A Container image with Jupyter-Notebook. It is specially customized for Python, Pandas, Seaborn, GNU-Octave, SageMath, Latex and PDF. It uses mini-conda for managing Python libraries. All conda packages are installed in Base venv.
   
 Use it on a Windows/Mac or Linux Host computer. Use Docker or Podman. Any Folder can be used as Volume for Notebooks. 
