@@ -83,7 +83,9 @@ There are 5 sample Jupyter Notebooks (*.ipynb) files included. Place them in you
 1. [sample-notebooks/Matrices_&_Determinants.ipynb](./sample-notebooks/Matrices_&_Determinants.ipynb) - Use Octave Kernel for this.
 1. [sample-notebooks/Solving-Linear-Equations - with visible latex.ipynb](./sample-notebooks/Solving-Linear-Equations%20-%20with%20visible%20latex.ipynb) - Use Octave Kernel for this.
 1. [sample-notebooks/Solving-Linear-Equations - with hidden latex.ipynb](./sample-notebooks/Solving-Linear-Equations%20-%20with%20hidden%20latex.ipynb) - Use Octave Kernel for this.
-1. [sample-notebooks/The 5-core partitions.ipynb](./sample-notebooks/The 5-core partitions.ipynb) - Use SageMath Kernel for this. [Reference: Sagemath-Notebooks](https://github.com/subhajitbn/Sagemath-Notebooks)
+1. [sample-notebooks/The 5-core partitions.ipynb](./sample-notebooks/The%205-core%20partitions.ipynb) - Use SageMath Kernel for this. [Reference: Sagemath-Notebooks](https://github.com/subhajitbn/Sagemath-Notebooks)
+1. [sample-notebooks/SageMath-Play-Integers.ipynb](./sample-notebooks/SageMath-Play-Integers.ipynb) - Use Sage Kernel for this. [Reference: SageMath Good Video Series](https://www.youtube.com/watch?v=4QZwb_0OOxY&list=PLyqSpQzTE6M-4YsNKnIOJeR0PVUfy8qoQ&index=18)
+1. [sample/SageMath-Solving Equations & Plots.ipynb](./sample-notebooks/SageMath-Solving%20Equations%20%26%20Plots.ipynb) - Use Sage Kernel for this. [Reference: SageMath Good Video Series](https://www.youtube.com/watch?v=4QZwb_0OOxY&list=PLyqSpQzTE6M-4YsNKnIOJeR0PVUfy8qoQ&index=18)
 
 ## Using Latex
 When using Latex in your notebooks, that may eventually be converted to PDF files, make sure to use strict Latex syntax. The Latex to PDF converter used in this Container (nbconvert with xelatex) is particularly sensitive to extra 'Space' characters.
